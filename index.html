@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Yaqoob Ahmed — Developer Portfolio</title>
+  <meta name="description" content="Full‑stack developer portfolio of Yaqoob Ahmed: APIs, cloud, UML, and modern web apps."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+  <script defer src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <canvas id="bg" aria-hidden="true"></canvas>
+
+  <header class="container header">
+    <div class="brand">
+      <span class="logo">YA</span>
+      <h1>Yaqoob Ahmed</h1>
+    </div>
+    <nav>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#diagrams">Diagrams</a>
+      <a href="https://github.com/yzahmed" target="_blank" rel="noopener">GitHub</a>
+      <button id="themeToggle" class="toggle" aria-label="Toggle theme">🌙</button>
+    </nav>
+  </header>
+
+  <section class="container hero">
+    <div class="hero-text">
+      <h2>Full‑Stack Developer</h2>
+      <p>I build <strong>clean APIs</strong>, <strong>scalable services</strong>, and <strong>developer tools</strong> — with an emphasis on security, reliability, and delightful UX.</p>
+      <div class="cta">
+        <a class="btn primary" href="#projects">See Projects</a>
+        <a class="btn ghost" href="https://github.com/yzahmed" target="_blank" rel="noopener">GitHub Profile</a>
+      </div>
+      <ul class="chips">
+        <li>C#</li><li>Node.js</li><li>Go</li><li>React</li><li>PHP</li><li>Laravel</li><li>SQL</li><li>MongoDB</li><li>Docker</li><li>Kubernetes</li><li>UML</li>
+      </ul>
+    </div>
+    <div class="hero-card glass">
+      <h3>Now Exploring</h3>
+      <ul>
+        <li>Concurrent services with Go & worker pools</li>
+        <li>OAuth2 / PKCE deep-dives</li>
+        <li>Cloud-native deployments</li>
+      </ul>
+      <div class="stat-grid">
+        <div><span class="stat">7</span><span>Featured Projects</span></div>
+        <div><span class="stat">10+</span><span>Tech Stack Items</span></div>
+        <div><span class="stat">∞</span><span>Device Combos</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="container section">
+    <h2 class="section-title">Projects</h2>
+    <div class="grid">
+      <article class="card">
+        <h3>Device Generator</h3>
+        <p>Generates <em>realistic (non‑identifiable)</em> device profiles via API. Go microservice with goroutines + worker pools.</p>
+        <ul class="tags"><li>Node</li><li>Go</li><li>Express</li><li>Concurrency</li></ul>
+      </article>
+
+      <article class="card">
+        <h3>Auth URL Generator</h3>
+        <p>Builds specialized OAuth2/PKCE URLs accepted by enterprise apps. Returns valid authorization codes for testing flows.</p>
+        <ul class="tags"><li>OAuth2</li><li>PKCE</li><li>Node</li></ul>
+      </article>
+
+      <article class="card">
+        <h3>MultiStore OMS</h3>
+        <p>MySQL relational design: triggers, views, stored procedures. Automated order flows + integrity checks.</p>
+        <ul class="tags"><li>MySQL</li><li>SQL</li><li>Schema</li></ul>
+      </article>
+
+      <article class="card">
+        <h3>BootCampCool</h3>
+        <p>Desktop fan control app for Bootcamped MacBooks. OOP & event-driven patterns, CSV logging & tray mode.</p>
+        <ul class="tags"><li>C#</li><li>Windows</li><li>UX</li></ul>
+      </article>
+
+      <article class="card">
+        <h3>TxtMaster</h3>
+        <p>Text transformation toolkit with modular rules & batch processing. Saves time on repetitive doc edits.</p>
+        <ul class="tags"><li>Node</li><li>CLI</li></ul>
+      </article>
+
+      <article class="card">
+        <h3>Tax Calculator Extension</h3>
+        <p>Real‑time in‑page tax calculations with DOM parsing and configurable rules. Runs as a Chrome Extension.</p>
+        <ul class="tags"><li>JavaScript</li><li>Chrome APIs</li></ul>
+      </article>
+
+      <article class="card">
+        <h3>Markdown Portfolio</h3>
+        <p>Responsive portfolio powered by Markdown + React components. Hosted on GitHub Pages.</p>
+        <ul class="tags"><li>React</li><li>Node</li></ul>
+      </article>
+    </div>
+  </section>
+
+  <section id="skills" class="container section">
+    <h2 class="section-title">Skills</h2>
+    <div class="skills">
+      <div class="skill glass">C# / .NET</div>
+      <div class="skill glass">JavaScript / TypeScript</div>
+      <div class="skill glass">React</div>
+      <div class="skill glass">Node.js</div>
+      <div class="skill glass">Go</div>
+      <div class="skill glass">PHP / Laravel</div>
+      <div class="skill glass">SQL / MySQL / SQL Server / PostgreSQL</div>
+      <div class="skill glass">MongoDB / Firebase</div>
+      <div class="skill glass">Docker / Kubernetes / Proxmox</div>
+      <div class="skill glass">UML (Mermaid)</div>
+    </div>
+  </section>
+
+  <section id="diagrams" class="container section">
+    <h2 class="section-title">Diagrams</h2>
+    <div class="diagram">
+      <h3>Auth (PKCE) Sequence</h3>
+      <pre class="mermaid">
+sequenceDiagram
+  autonumber
+  participant Client as Client App
+  participant AS as Auth Server
+  participant RS as Resource Server
+  Client->>Client: Generate code_verifier + code_challenge
+  Client->>AS: /authorize?client_id&redirect_uri&code_challenge
+  AS-->>Client: redirect with authorization_code
+  Client->>AS: /token (code + code_verifier)
+  AS-->>Client: access_token (+ refresh_token)
+  Client->>RS: GET /resource (Bearer access_token)
+  RS-->>Client: 200 OK (data)
+      </pre>
+    </div>
+
+    <div class="diagram">
+      <h3>Device Generation (High‑Level)</h3>
+      <pre class="mermaid">
+flowchart LR
+  A[Client Request] -->|validate| B(Node.js API)
+  B -->|enqueue| C[Worker Pool]
+  C --> D(Go Service)
+  D -->|goroutines| E{Generate Device Profile}
+  E -->|unique, non-identifiable| F[(Store/Return)]
+  F --> G[Response JSON]
+      </pre>
+    </div>
+  </section>
+
+  <footer class="container footer">
+    <p>© <span id="year"></span> Yaqoob Ahmed • <a href="https://github.com/yzahmed" target="_blank" rel="noopener">GitHub</a></p>
+  </footer>
+</body>
+</html>
