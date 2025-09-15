@@ -1,36 +1,66 @@
-/* Styles for Yaqoob Ahmed — GitHub Pages */
+/* Styles for Yaqoob Ahmed — GitHub Pages with Light/Dark Themes */
 :root{
   --bg:#0b1020;
-  --bg2:#0f172a;
   --fg:#e5f0ff;
   --muted:#93a4bf;
   --accent: linear-gradient(135deg,#0ea5e9, #22c55e);
   --glass: rgba(255,255,255,0.06);
   --card: rgba(255,255,255,0.08);
+  --border:#243;
+  --chip-bg:#0b1226aa;
+  --chip-border:#2a3b5c;
+  --link:#a5f3fc;
   --shadow: 0 10px 30px rgba(0,0,0,.35);
 }
 
+/* Light theme overrides */
+:root.light{
+  --bg:#f6f9ff;
+  --fg:#0b1020;
+  --muted:#4b5563;
+  --glass: rgba(0,0,0,0.04);
+  --card: rgba(255,255,255,0.9);
+  --border:#cdd6e6;
+  --chip-bg:#ffffffcc;
+  --chip-border:#cbd5e1;
+  --link:#0ea5e9;
+  --shadow: 0 10px 24px rgba(17,24,39,.12);
+}
+
 *{ box-sizing:border-box }
-html,body{ margin:0; padding:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,'Helvetica Neue',Arial,'Noto Sans',sans-serif; color:var(--fg); background: radial-gradient(1200px 800px at 20% -10%, #1e293b 10%, transparent 60%), radial-gradient(1000px 700px at 120% 0%, #0ea5e922 0%, transparent 60%), var(--bg); }
-a{ color:#a5f3fc; text-decoration:none }
+html,body{ margin:0; padding:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,'Helvetica Neue',Arial,'Noto Sans',sans-serif; color:var(--fg); background: var(--bg); }
+a{ color:var(--link); text-decoration:none }
 .container{ max-width:1100px; margin:0 auto; padding:0 20px }
 
-/* Canvas blob */
-#bg{ position:fixed; inset:0; z-index:-1; filter: blur(60px); background: radial-gradient(600px 500px at 20% 10%, #0ea5e955, transparent 60%), radial-gradient(600px 600px at 80% 0%, #22c55e44, transparent 60%); }
+/* Background gradients */
+body::before, body::after{
+  content:""; position:fixed; inset:0; z-index:-2;
+  background:
+    radial-gradient(1200px 800px at 20% -10%, #1e293b22 10%, transparent 60%),
+    radial-gradient(1000px 700px at 120% 0%, #0ea5e922 0%, transparent 60%);
+  pointer-events:none;
+}
+:root.light body::before, :root.light body::after{
+  background:
+    radial-gradient(1200px 800px at 20% -10%, #93c5fd33 10%, transparent 60%),
+    radial-gradient(1000px 700px at 110% -10%, #a7f3d033 0%, transparent 60%);
+}
+
+#bg{ position:fixed; inset:0; z-index:-1; filter: blur(60px); opacity:.6 }
 
 .header{ display:flex; align-items:center; justify-content:space-between; padding:26px 0 }
 .brand{ display:flex; align-items:center; gap:14px }
 .logo{ width:44px; height:44px; display:grid; place-items:center; border-radius:14px; background:var(--accent); color:#001018; font-weight:800; box-shadow:var(--shadow) }
 h1{ font-size:1.2rem; letter-spacing:.5px; margin:0 }
 nav a{ margin-right:16px; opacity:.9 }
-.toggle{ background:#111827; color:#e5f0ff; border:1px solid #223; border-radius:12px; padding:8px 10px; cursor:pointer }
+.toggle{ background:transparent; color:var(--fg); border:1px solid var(--border); border-radius:12px; padding:8px 10px; cursor:pointer }
 
 .hero{ display:grid; grid-template-columns:1.2fr .8fr; gap:28px; padding:24px 0 44px }
 .hero-text h2{ font-size:3rem; margin:.2rem 0 }
 .hero-text p{ color:var(--muted); line-height:1.6 }
 .chips{ display:flex; flex-wrap:wrap; gap:8px; list-style:none; padding:0; margin:16px 0 0 }
-.chips li{ border:1px solid #2a3b5c; padding:6px 10px; border-radius:999px; background:#0b1226aa }
-.glass{ background:var(--glass); border:1px solid #243; border-radius:18px; padding:18px; box-shadow:var(--shadow) }
+.chips li{ border:1px solid var(--chip-border); padding:6px 10px; border-radius:999px; background:var(--chip-bg) }
+.glass{ background:var(--glass); border:1px solid var(--border); border-radius:18px; padding:18px; box-shadow:var(--shadow) }
 .hero-card h3{ margin-top:0 }
 .stat-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:12px }
 .stat{ display:block; font-size:1.4rem; font-weight:800; background:var(--accent); -webkit-background-clip:text; background-clip:text; color:transparent }
@@ -39,23 +69,24 @@ nav a{ margin-right:16px; opacity:.9 }
 .section-title{ font-size:2rem; margin:0 0 18px }
 
 .grid{ display:grid; gap:16px; grid-template-columns:repeat(3, 1fr) }
-.card{ background:var(--card); border:1px solid #243; border-radius:18px; padding:18px; box-shadow:var(--shadow) }
+.card{ background:var(--card); border:1px solid var(--border); border-radius:18px; padding:18px; box-shadow:var(--shadow) }
 .card h3{ margin:0 0 6px }
 .tags{ display:flex; gap:6px; list-style:none; padding:0; margin:12px 0 0 }
-.tags li{ background:#0b1226aa; border:1px solid #27334a; padding:4px 8px; border-radius:999px; font-size:.85rem; color:#a9c1ff }
+.tags li{ background:var(--chip-bg); border:1px solid var(--chip-border); padding:4px 8px; border-radius:999px; font-size:.85rem; color:var(--muted) }
 
 .skills{ display:grid; gap:12px; grid-template-columns:repeat(2,1fr) }
-.skill{ text-align:center; padding:14px; border-radius:14px; border:1px solid #243; background:var(--glass) }
+.skill{ text-align:center; padding:14px; border-radius:14px; border:1px solid var(--border); background:var(--glass) }
 
-.diagram pre{ background:#0b1226; border:1px solid #223; border-radius:14px; padding:18px; overflow:auto }
+.diagram pre{ background:#0b1226; border:1px solid var(--border); border-radius:14px; padding:18px; overflow:auto }
+:root.light .diagram pre{ background:#f1f5f9 }
 .diagram h3{ margin-bottom:10px }
 
-.footer{ padding:48px 0 60px; color:#91a4c7 }
-.footer a{ color:#9be7ff }
+.footer{ padding:48px 0 60px; color:var(--muted) }
+.footer a{ color:var(--link) }
 
-.btn{ display:inline-block; padding:12px 16px; border-radius:12px; border:1px solid #294; transition:.2s transform }
+.btn{ display:inline-block; padding:12px 16px; border-radius:12px; border:1px solid var(--border); transition:.2s transform }
 .btn.primary{ background:var(--accent); color:#001018; font-weight:800 }
-.btn.ghost{ border:1px solid #2b3b58 }
+.btn.ghost{}
 .btn:hover{ transform: translateY(-1px) }
 
 @media (max-width: 900px){
