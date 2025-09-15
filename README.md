@@ -1,22 +1,43 @@
-# Yaqoob Ahmed — GitHub Pages Portfolio
+# 🌐 Yaqoob Ahmed — Portfolio
 
-This is a **static portfolio** for GitHub Pages.  
-Live sections: **Hero**, **Projects**, **Skills**, **Mermaid diagrams**, and a subtle animated background.
+Welcome to my developer portfolio!  
+This site is built with **HTML, CSS, and JavaScript** and hosted via **GitHub Pages**.  
 
-## 🚀 Deploy on GitHub Pages
-1. Create a new repository named `yzahmed.github.io` (or any repo → enable Pages in Settings).
-2. Upload these files to the repo root:
-   - `index.html`
-   - `styles.css`
-   - `script.js`
-3. Go to **Settings → Pages**:
-   - Source: **Deploy from a branch**
-   - Branch: **main** (root)
-4. Wait for the green check → your site will be live at `https://yzahmed.github.io/`.
+## 🚀 Features
+- ✨ Modern design with animated background and glassmorphism UI  
+- 📦 Project showcase with descriptions and tags  
+- 🧰 Skills grid for quick tech overview  
+- 🧠 Mermaid diagrams (Auth PKCE & Device Generation) rendered live  
+- 🌗 Dark/light mode toggle  
 
-## ✏️ Customize
-- Edit your project descriptions and add repo links in the **Projects** section in `index.html`.
-- Adjust colors in `styles.css` (`--accent`, `--bg`, etc.).
-- Mermaid diagrams are defined under the **Diagrams** section.
+## 📍 Live Website
+👉 [https://yzahmed.github.io](https://yzahmed.github.io)
 
-Enjoy! 🎉
+## 🧑‍💻 About Me
+I’m **Yaqoob Ahmed**, a full‑stack developer passionate about building **clean APIs, scalable services, and useful developer tools**.  
+I focus on **security, reliability, and simplicity**, with experience across:  
+- Modern languages & frameworks (C#, Node.js, React, Go, PHP/Laravel)  
+- SQL & NoSQL databases (MySQL, PostgreSQL, MongoDB, Firebase)  
+- Cloud & infrastructure (Docker, Kubernetes, Proxmox)  
+- System design, UML, and authentication flows (OAuth2/PKCE)  
+
+## 🛠️ Tech Stack
+- HTML5 + CSS3 + JavaScript (Vanilla)  
+- Mermaid.js for diagrams  
+- Responsive grid + modern CSS features  
+
+## 📂 Structure
+```
+.
+├── index.html   # Main page
+├── styles.css   # Styles (glassmorphism, responsive grid)
+├── script.js    # Background animation + theme toggle + Mermaid init
+└── README.md    # This file
+```
+
+## 🤝 Contributing
+This portfolio is personal, but suggestions are welcome.  
+Feel free to open an issue or fork the repo for inspiration.
+
+## 📜 License
+MIT License © 2025 Yaqoob Ahmed
